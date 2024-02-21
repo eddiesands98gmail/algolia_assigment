@@ -48,6 +48,8 @@
    docker-compose up
    ```
 
+3. Visit [http://localhost:3000/](http://localhost:3000/) in your browser to view the application
+
 ### Additional Resources
 
 - Algolia Sending Data docs: [https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/](https://www.algolia.com/doc/guides/sending-and-managing-data/send-and-update-your-data/)
