@@ -23,7 +23,7 @@
    ```
 
 3. Open the algolia_data.py file
-   1. Update the “file_path” variable by replacing “PATH” with the path to the directory where your index data is stored
+   1. Update the “file_path” variable by replacing “PATH” with the path of the directory where your index data is stored
    2. Update “index” variable by replacing YOUR_INDEX with the name of your Algolia Index. NOTE: if the selected index does not exists, it will be automatically created.
 4. Open a terminal and run the following command to send your data into Algolia
 
@@ -31,7 +31,7 @@
    python3 algolia_data.py
    ```
 
-5. Congratulations!
+5. Congratulations! Your data should be in Algolia under the specified index.
 
 ### Additional Resources
 
