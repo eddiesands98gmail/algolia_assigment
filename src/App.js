@@ -20,8 +20,10 @@ import MobileFilterDrawer from "./components/FilterPanel";
 import NavBar from "./components/NavBar";
 import Autocomplete from "./components/Autocomplete";
 
-const APP_ID = process.env.REACT_APP_APP_ID;
-const API_KEY = process.env.REACT_APP_API_KEY;
+const REACT_APP_APP_ID = "BHB29FBHWF";
+const REACT_APP_API_KEY = "399ebe2e44b40c8089e50cf5c5eb6032";
+const APP_ID = REACT_APP_APP_ID;
+const API_KEY = REACT_APP_API_KEY;
 
 const searchClient = algoliasearch(APP_ID, API_KEY);
 
