@@ -13,7 +13,23 @@
 .ais-InfiniteHits-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  grid-gap: 2rem;
+  padding-top: 5%;
+}
+
+@media only screen and (max-width: 900px) {
+  .ais-InfiniteHits-list {
+    padding-left: 5%;
+    padding-top: 5%;
+    grid-template-columns: 1fr;
+  }
+  .filterDivider {
+    display: none;
+  }
+}
+
+.ais-InfiniteHits-item {
+  background-color: #f0f4f8;
 }
 
 .aa-Form,
@@ -25,4 +41,12 @@
 
 .aa-Panel {
   z-index: 10;
+}
+
+body {
+  background-color: #f0f4f8;
+}
+
+.MuiAspectRatio-content {
+  background-color: white !important;
 }

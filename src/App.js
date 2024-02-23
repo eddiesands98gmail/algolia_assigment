@@ -16,7 +16,7 @@ import {
 import { Grid, Divider, Sheet } from "@mui/joy";
 
 import Hit from "./components/Hit";
-import FilterPanel from "./components/FilterPanel";
+import MobileFilterDrawer from "./components/FilterPanel";
 import NavBar from "./components/NavBar";
 import Autocomplete from "./components/Autocomplete";
 
@@ -47,10 +47,10 @@ function App() {
                 spacing={2}
                 sx={{ flexGrow: 1, justifyContent: "center" }}
               >
-                <Grid xs={6}>
+                <Grid xs={10} md={8} lg={8}>
                   <SearchBox placeholder="Instant Search" autoFocus />
                 </Grid>
-                <Grid xs={2}>
+                <Grid xs={2} md={2} lg={2}>
                   <SortBy
                     items={[
                       { label: "Relevance", value: "eddies_index" },
@@ -61,7 +61,7 @@ function App() {
                   />
                 </Grid>
 
-                <Grid xs={2}>
+                <Grid xs={12} md={2} lg={2}>
                   <Autocomplete searchClient={searchClient} />
                 </Grid>
               </Grid>
@@ -69,14 +69,17 @@ function App() {
           </Grid>
 
           {/* Filter Panel */}
-          <Grid xs={2} sx={{ p: 3 }}>
-            <FilterPanel></FilterPanel>
+          <Grid xs={10} md={2} lg={2} sx={{ p: 3 }}>
+            <MobileFilterDrawer></MobileFilterDrawer>
           </Grid>
 
-          <Divider orientation="vertical" sx={{ ml: 10, mr: 5 }}></Divider>
-
+          <Divider
+            className="filterDivider"
+            orientation="vertical"
+            sx={{ ml: 10, mr: 5 }}
+          ></Divider>
           {/*Search Results*/}
-          <Grid xs={7}>
+          <Grid xs={10} sm={10} md={8} lg={8}>
             <ClearRefinements
               translations={{
                 resetButtonText: "Clear Filters",

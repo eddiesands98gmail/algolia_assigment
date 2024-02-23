@@ -1,4 +1,5 @@
-import { Divider } from "@mui/joy";
+import { useState, useEffect } from "react";
+import { Divider, ModalClose, Drawer, Button } from "@mui/joy";
 
 import {
   RefinementList,
@@ -36,4 +37,53 @@ const FilterPanel = () => {
   );
 };
 
-export default FilterPanel;
+// export default FilterPanel;
+
+function MobileFilterDrawer() {
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState(window.innerWidth);
+
+  const toggleDrawer = (inOpen) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setOpen(inOpen);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isMobile = size < 800;
+
+  return (
+    <>
+      {isMobile && (
+        <Button variant="outlined" color="neutral" onClick={toggleDrawer(true)}>
+          Filters
+        </Button>
+      )}
+      {isMobile ? (
+        <Drawer open={open} onClose={toggleDrawer(false)}>
+          <ModalClose />
+          <FilterPanel />
+        </Drawer>
+      ) : (
+        <FilterPanel />
+      )}
+    </>
+  );
+}
+export default MobileFilterDrawer;

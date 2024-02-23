@@ -1,4 +1,4 @@
-import { Box, Stack, Button } from "@mui/joy";
+import { Box } from "@mui/joy";
 
 const NavBar = (props) => {
   return (

@@ -15,15 +15,20 @@ const Hit = (props) => {
     <Card
       orientation="horizontal"
       variant="outlined"
-      sx={{ width: 500, height: "11rem", zIndex: 0 }}
+      sx={{
+        width: "100%",
+        height: "90%",
+        display: "flex",
+        zIndex: 0,
+      }}
       size="md"
     >
       <CardOverflow>
-        <AspectRatio ratio="1" sx={{ width: 150 }} objectFit="contain">
+        <AspectRatio ratio="1" sx={{ width: 100 }} objectFit="contain">
           <img src={props.hit.image} alt={props.name} />
         </AspectRatio>
       </CardOverflow>
-      <CardContent>
+      <CardContent sx={{ flex: 1 }}>
         <Typography level="body-lg" textColor="success.plainColor">
           <Highlight hit={props.hit} attribute="name" />
         </Typography>
@@ -51,25 +56,8 @@ const Hit = (props) => {
             </svg>
           ))}
         </Typography>
+        <Typography level="body-md">${props.hit.price}</Typography>
       </CardContent>
-      <CardOverflow
-        variant="soft"
-        color="primary"
-        sx={{
-          px: 0.2,
-          width: "90px",
-          writingMode: "horizontal-rl",
-          justifyContent: "center",
-          fontSize: "xs",
-          fontWeight: "xl",
-          letterSpacing: "1px",
-          textTransform: "uppercase",
-          borderLeft: "1px solid",
-          borderColor: "divider",
-        }}
-      >
-        ${props.hit.price}
-      </CardOverflow>
     </Card>
   );
 };
